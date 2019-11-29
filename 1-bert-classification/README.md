@@ -5,14 +5,14 @@
   - 一行一句， 一个tab 后跟一个分类内容，一共17130条
   - 0 negative 1 positive 2 negative
 
-<img src="/Users/shinkeika/learning/nlp_project/1-bert-classification/image/1.png" alt="image-20191129162150298" style="zoom:50%;" />
+<img src="https://shinkeika.github.io/images/bert/1.png" alt="image-20191129162150298" style="zoom:50%;" />
 
 - 看下bert代码需要哪些修改
 
   - 在 run_classifier.py里看这段代码
   - 其实这个DataProcessor就是处理数据的基类，所有我们自定义的项目都需要继承这个类，并且根据自己的项目的格式重写其中的方法就可以。
 
-  <img src="/Users/shinkeika/learning/nlp_project/1-bert-classification/image/2.png" alt="image-20191129162150298" style="zoom:50%;" />
+  <img src="https://shinkeika.github.io/images/bert/2.png" alt="image-20191129162150298" style="zoom:50%;" />
 
   - 自己的数据处理类
 
@@ -71,7 +71,7 @@
             return ['0', '1', '2']
     ```
 
-  - 记得把自己的数据类加入到main函数里<img src="/Users/shinkeika/learning/nlp_project/1-bert-classification/image/3.png" alt="image-20191129162150298" style="zoom:50%;" />
+  - 记得把自己的数据类加入到main函数里<img src="https://shinkeika.github.io/images/bert/3.png" alt="image-20191129162150298" style="zoom:50%;" />
 
   - 那么就可以跑数据了
 
