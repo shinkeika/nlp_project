@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/1-bert-classification.iml" filepath="$PROJECT_DIR$/.idea/1-bert-classification.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../2-BERT-BiLSTM-CRF-NER/.idea/2-BERT-BiLSTM-CRF-NER.iml" filepath="$PROJECT_DIR$/../2-BERT-BiLSTM-CRF-NER/.idea/2-BERT-BiLSTM-CRF-NER.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../bert/learn_bert/.idea/learn_bert.iml" filepath="$PROJECT_DIR$/../../bert/learn_bert/.idea/learn_bert.iml" />
     </modules>
   </component>
