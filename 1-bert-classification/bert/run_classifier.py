@@ -204,6 +204,60 @@ class DataProcessor(object):
       return lines
 
 
+class MyclassificationProcessor(DataProcessor):
+    '''
+    My classification data processor
+    '''
+
+    def get_train_examples(self, data_dir):
+        '''
+        get a collection of 'Input example' for the training set
+        :param data_dir: 训练数据的文件
+        :return:
+        '''
+        file_path = os.path.join(data_dir,'train_sentiment.txt')
+
+        f = open(file_path, 'r', encoding='UTF-8')
+
+        examples = []
+
+        for (i, line) in enumerate(f.readlines()):
+            guid = "train-%d" % (i)
+            line = line.replace('\n','').split('\t')
+            text_a = tokenization.convert_to_unicode(str(line[1]))
+            label = str(line[2])
+            examples.append(
+                InputExample(guid=guid, text_a=text_a, text_b=None, label=label)
+            )
+        return examples
+
+    def get_test_examples(self, data_dir):
+        '''
+        get a collection of 'Input example' for the test set
+        :param data_dir: 测试数据的文件
+        :return:
+        '''
+        file_path = os.path.join(data_dir,'test_sentiment.txt')
+
+        f = open(file_path, 'r', encoding='UTF-8')
+
+        examples = []
+
+        for (i, line) in enumerate(f.readlines()):
+            guid = "test-%d" % (i)
+            line = line.replace('\n','').split('\t')
+            text_a = tokenization.convert_to_unicode(str(line[1]))
+            label = str(line[2])
+            examples.append(
+                InputExample(guid=guid, text_a=text_a, text_b=None, label=label)
+            )
+        return examples
+
+    def get_labels(self):
+        """Gets the list of labels for this data set."""
+        return ['0', '1', '2']
+
+
 class XnliProcessor(DataProcessor):
   """Processor for the XNLI data set."""
 
@@ -788,6 +842,7 @@ def main(_):
       "mnli": MnliProcessor,
       "mrpc": MrpcProcessor,
       "xnli": XnliProcessor,
+      "myclassification": MyclassificationProcessor,
   }
 
   tokenization.validate_case_matches_checkpoint(FLAGS.do_lower_case,
