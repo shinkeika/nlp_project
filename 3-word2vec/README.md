@@ -31,7 +31,7 @@
 
   - 训练<img src="https://shinkeika.github.io/images/bert/3/9.png" alt="image-20191130121117372" style="zoom:50%;" />
 
-- 可视化展示
+- 可视化展示 
 
   在项目根目录执行
 
