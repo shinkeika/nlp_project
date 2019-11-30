@@ -29,7 +29,7 @@
 
   - 使用nceloss 负采样模型训练<img src="https://shinkeika.github.io/images/bert/3/5.png" alt="image-20191130120158791" style="zoom:50%;" />
 
-  - 训练<img src="https://shinkeika.github.io/images/bert/3/6.png" alt="image-20191130121117372" style="zoom:50%;" />
+  - 训练<img src="https://shinkeika.github.io/images/bert/3/9.png" alt="image-20191130121117372" style="zoom:50%;" />
 
 - 可视化展示 
 
@@ -39,14 +39,14 @@
 
   使用tensorboard打开训练的记录
 
-  <img src="https://shinkeika.github.io/images/bert/3/7.png" alt="image-20191130121737502" style="zoom:50%;" />
+  <img src="https://shinkeika.github.io/images/bert/3/6.png" alt="image-20191130121737502" style="zoom:50%;" />
 
   然后在浏览器输入 http://localhost:6006/#scalars
 
   可以看到训练的损失
 
-  <img src="https://shinkeika.github.io/images/bert/3/8.png" alt="image-20191130121908044" style="zoom:50%;" />
+  <img src="https://shinkeika.github.io/images/bert/3/7.png" alt="image-20191130121908044" style="zoom:50%;" />
 
   在projector中看到可视化的词向量
 
-<img src="https://shinkeika.github.io/images/bert/3/9.png" alt="image-20191130122148495" style="zoom:50%;" />
+<img src="https://shinkeika.github.io/images/bert/3/8.png" alt="image-20191130122148495" style="zoom:50%;" />
