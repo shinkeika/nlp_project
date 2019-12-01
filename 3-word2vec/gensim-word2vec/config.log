@@ -1,0 +1,91 @@
+2019-12-01 21:59:50,736-gensim.models.word2vec-INFO-collecting all words and their counts
+2019-12-01 21:59:50,736-gensim.models.word2vec-INFO-PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2019-12-01 21:59:50,787-gensim.models.word2vec-INFO-collected 18162 word types from a corpus of 164951 raw words and 2311 sentences
+2019-12-01 21:59:50,787-gensim.models.word2vec-INFO-Loading a fresh vocabulary
+2019-12-01 21:59:50,810-gensim.models.word2vec-INFO-effective_min_count=1 retains 18162 unique words (100% of original 18162, drops 0)
+2019-12-01 21:59:50,810-gensim.models.word2vec-INFO-effective_min_count=1 leaves 164951 word corpus (100% of original 164951, drops 0)
+2019-12-01 21:59:50,851-gensim.models.word2vec-INFO-deleting the raw counts dictionary of 18162 items
+2019-12-01 21:59:50,851-gensim.models.word2vec-INFO-sample=0.001 downsamples 39 most-common words
+2019-12-01 21:59:50,851-gensim.models.word2vec-INFO-downsampling leaves estimated 124223 word corpus (75.3% of prior 164951)
+2019-12-01 21:59:50,862-gensim.models.word2vec-INFO-constructing a huffman tree from 18162 words
+2019-12-01 21:59:51,275-gensim.models.word2vec-INFO-built huffman tree with maximum node depth 18
+2019-12-01 21:59:51,295-gensim.models.base_any2vec-INFO-estimated required memory for 18162 words and 100 dimensions: 34507800 bytes
+2019-12-01 21:59:51,295-gensim.models.word2vec-INFO-resetting layer weights
+2019-12-01 21:59:54,256-gensim.models.base_any2vec-INFO-training model with 3 workers on 18162 vocabulary and 100 features, using sg=0 hs=1 sample=0.001 negative=5 window=3
+2019-12-01 21:59:54,410-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 2 more threads
+2019-12-01 21:59:54,420-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 1 more threads
+2019-12-01 21:59:54,423-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 0 more threads
+2019-12-01 21:59:54,423-gensim.models.base_any2vec-INFO-EPOCH - 1 : training on 164951 raw words (124282 effective words) took 0.2s, 751709 effective words/s
+2019-12-01 21:59:54,571-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 2 more threads
+2019-12-01 21:59:54,580-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 1 more threads
+2019-12-01 21:59:54,583-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 0 more threads
+2019-12-01 21:59:54,583-gensim.models.base_any2vec-INFO-EPOCH - 2 : training on 164951 raw words (124262 effective words) took 0.2s, 779870 effective words/s
+2019-12-01 21:59:54,738-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 2 more threads
+2019-12-01 21:59:54,749-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 1 more threads
+2019-12-01 21:59:54,750-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 0 more threads
+2019-12-01 21:59:54,750-gensim.models.base_any2vec-INFO-EPOCH - 3 : training on 164951 raw words (124239 effective words) took 0.2s, 752537 effective words/s
+2019-12-01 21:59:54,894-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 2 more threads
+2019-12-01 21:59:54,905-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 1 more threads
+2019-12-01 21:59:54,908-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 0 more threads
+2019-12-01 21:59:54,908-gensim.models.base_any2vec-INFO-EPOCH - 4 : training on 164951 raw words (124276 effective words) took 0.2s, 792613 effective words/s
+2019-12-01 21:59:55,060-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 2 more threads
+2019-12-01 21:59:55,065-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 1 more threads
+2019-12-01 21:59:55,071-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 0 more threads
+2019-12-01 21:59:55,071-gensim.models.base_any2vec-INFO-EPOCH - 5 : training on 164951 raw words (124335 effective words) took 0.2s, 769733 effective words/s
+2019-12-01 21:59:55,071-gensim.models.base_any2vec-INFO-training on a 824755 raw words (621394 effective words) took 0.8s, 763035 effective words/s
+2019-12-01 21:59:55,071-gensim.models.keyedvectors-INFO-precomputing L2-norms of word weight vectors
+2019-12-01 21:59:55,095-gensim.utils-INFO-saving Word2Vec object under data/w2v_1, separately None
+2019-12-01 21:59:55,095-gensim.utils-INFO-not storing attribute vectors_norm
+2019-12-01 21:59:55,096-gensim.utils-INFO-not storing attribute cum_table
+2019-12-01 21:59:55,454-gensim.utils-INFO-saved data/w2v_1
+2019-12-01 21:59:55,912-gensim.models.word2vec-INFO-collecting all words and their counts
+2019-12-01 21:59:55,912-gensim.models.word2vec-INFO-PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2019-12-01 21:59:55,913-gensim.models.word2vec-INFO-collected 270 word types from a corpus of 783 raw words and 10 sentences
+2019-12-01 21:59:55,913-gensim.models.word2vec-INFO-Loading a fresh vocabulary
+2019-12-01 21:59:55,913-gensim.models.word2vec-INFO-effective_min_count=1 retains 270 unique words (100% of original 270, drops 0)
+2019-12-01 21:59:55,913-gensim.models.word2vec-INFO-effective_min_count=1 leaves 783 word corpus (100% of original 783, drops 0)
+2019-12-01 21:59:55,914-gensim.models.word2vec-INFO-deleting the raw counts dictionary of 270 items
+2019-12-01 21:59:55,914-gensim.models.word2vec-INFO-sample=0.001 downsamples 79 most-common words
+2019-12-01 21:59:55,914-gensim.models.word2vec-INFO-downsampling leaves estimated 497 word corpus (63.5% of prior 783)
+2019-12-01 21:59:55,914-gensim.models.base_any2vec-INFO-estimated required memory for 270 words and 100 dimensions: 351000 bytes
+2019-12-01 21:59:55,914-gensim.models.word2vec-INFO-resetting layer weights
+2019-12-01 21:59:55,959-gensim.models.base_any2vec-INFO-training model with 4 workers on 270 vocabulary and 100 features, using sg=1 hs=0 sample=0.001 negative=5 window=5
+2019-12-01 21:59:55,961-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 3 more threads
+2019-12-01 21:59:55,961-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 2 more threads
+2019-12-01 21:59:55,961-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 1 more threads
+2019-12-01 21:59:55,963-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 0 more threads
+2019-12-01 21:59:55,963-gensim.models.base_any2vec-INFO-EPOCH - 1 : training on 783 raw words (498 effective words) took 0.0s, 269745 effective words/s
+2019-12-01 21:59:55,965-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 3 more threads
+2019-12-01 21:59:55,965-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 2 more threads
+2019-12-01 21:59:55,965-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 1 more threads
+2019-12-01 21:59:55,966-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 0 more threads
+2019-12-01 21:59:55,966-gensim.models.base_any2vec-INFO-EPOCH - 2 : training on 783 raw words (501 effective words) took 0.0s, 231903 effective words/s
+2019-12-01 21:59:55,968-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 3 more threads
+2019-12-01 21:59:55,968-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 2 more threads
+2019-12-01 21:59:55,968-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 1 more threads
+2019-12-01 21:59:55,970-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 0 more threads
+2019-12-01 21:59:55,970-gensim.models.base_any2vec-INFO-EPOCH - 3 : training on 783 raw words (483 effective words) took 0.0s, 236209 effective words/s
+2019-12-01 21:59:55,971-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 3 more threads
+2019-12-01 21:59:55,971-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 2 more threads
+2019-12-01 21:59:55,971-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 1 more threads
+2019-12-01 21:59:55,973-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 0 more threads
+2019-12-01 21:59:55,973-gensim.models.base_any2vec-INFO-EPOCH - 4 : training on 783 raw words (514 effective words) took 0.0s, 255835 effective words/s
+2019-12-01 21:59:55,974-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 3 more threads
+2019-12-01 21:59:55,974-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 2 more threads
+2019-12-01 21:59:55,974-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 1 more threads
+2019-12-01 21:59:55,975-gensim.models.base_any2vec-INFO-worker thread finished; awaiting finish of 0 more threads
+2019-12-01 21:59:55,975-gensim.models.base_any2vec-INFO-EPOCH - 5 : training on 783 raw words (496 effective words) took 0.0s, 238343 effective words/s
+2019-12-01 21:59:55,975-gensim.models.base_any2vec-INFO-training on a 3915 raw words (2492 effective words) took 0.0s, 154271 effective words/s
+2019-12-01 21:59:55,976-gensim.models.base_any2vec-WARNING-under 10 jobs per worker: consider setting a smaller `batch_words' for smoother alpha decay
+2019-12-01 21:59:55,979-gensim.models.keyedvectors-INFO-precomputing L2-norms of word weight vectors
+2019-12-01 21:59:55,986-gensim.utils-INFO-saving Word2Vec object under data/w2v_2, separately None
+2019-12-01 21:59:55,987-gensim.utils-INFO-not storing attribute vectors_norm
+2019-12-01 21:59:55,987-gensim.utils-INFO-not storing attribute cum_table
+2019-12-01 21:59:55,991-gensim.utils-INFO-saved data/w2v_2
+2019-12-01 21:59:55,994-gensim.utils-INFO-loading Word2Vec object from data/w2v_2
+2019-12-01 21:59:55,997-gensim.utils-INFO-loading wv recursively from data/w2v_2.wv.* with mmap=None
+2019-12-01 21:59:55,997-gensim.utils-INFO-setting ignored attribute vectors_norm to None
+2019-12-01 21:59:55,997-gensim.utils-INFO-loading vocabulary recursively from data/w2v_2.vocabulary.* with mmap=None
+2019-12-01 21:59:55,997-gensim.utils-INFO-loading trainables recursively from data/w2v_2.trainables.* with mmap=None
+2019-12-01 21:59:55,997-gensim.utils-INFO-setting ignored attribute cum_table to None
+2019-12-01 21:59:55,998-gensim.utils-INFO-loaded data/w2v_2
