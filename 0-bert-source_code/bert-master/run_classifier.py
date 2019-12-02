@@ -160,7 +160,8 @@ class PaddingInputExample(object):
 
 class InputFeatures(object):
   """A single set of features of data."""
-
+  # TODO
+  # 做了个初始化
   def __init__(self,
                input_ids,
                input_mask,
@@ -176,6 +177,8 @@ class InputFeatures(object):
 
 class DataProcessor(object):
   """Base class for data converters for sequence classification data sets."""
+  # TODO
+  # 数据处理基类，下边有很多继承他的类，都是针对不同的任务进行处理，如果要写自己的方法，需要继承此类
 
   def get_train_examples(self, data_dir):
     """Gets a collection of `InputExample`s for the train set."""
@@ -212,6 +215,8 @@ class XnliProcessor(DataProcessor):
 
   def get_train_examples(self, data_dir):
     """See base class."""
+    # TODO
+    # 读取数据
     lines = self._read_tsv(
         os.path.join(data_dir, "multinli",
                      "multinli.train.%s.tsv" % self.language))
@@ -385,30 +390,51 @@ def convert_single_example(ex_index, example, label_list, max_seq_length,
         segment_ids=[0] * max_seq_length,
         label_id=0,
         is_real_example=False)
-
+  # TODO
+  # 转换为数据标签，0和1 字典格式
   label_map = {}
-  for (i, label) in enumerate(label_list): #构建标签
+  for (i, label) in enumerate(label_list):
     label_map[label] = i
-
-  tokens_a = tokenizer.tokenize(example.text_a) #第一句话分词
+  # TODO
+  # 第一句话做了个wordpiece分词
+  # 跳
+  tokens_a = tokenizer.tokenize(example.text_a)
   tokens_b = None
-  if example.text_b:
-    tokens_b = tokenizer.tokenize(example.text_b) #第二句话分词
 
+  # 如果有第二句话
+  if example.text_b:
+    tokens_b = tokenizer.tokenize(example.text_b)
+
+  # TODO
+  # 如果有第二句话
+  # cls [  第一句话  ] seg [    第二句话    ] seg
+  # 如果有一句话
+  # cls [ 第一句话  ] seg
   if tokens_b:
     # Modifies `tokens_a` and `tokens_b` in place so that the total
     # length is less than the specified length.
-    # Account for [CLS], [SEP], [SEP] with "- 3" #保留3个特殊字符
-    _truncate_seq_pair(tokens_a, tokens_b, max_seq_length - 3) #如果这俩太长了就截断操作
+    # Account for [CLS], [SEP], [SEP] with "- 3"
+    # TODO
+    # 如果有b就保留三个特殊字符
+    # 截断操作
+    _truncate_seq_pair(tokens_a, tokens_b, max_seq_length - 3)
   else:
     # Account for [CLS] and [SEP] with "- 2"
     if len(tokens_a) > max_seq_length - 2:
       tokens_a = tokens_a[0:(max_seq_length - 2)]
 
+  # TODO
+  # 解释一下
+  # 我们的输入是两句话，以下格式
+  # tokens:   [CLS] is this jack ##son ##ville ? [SEP] no it is not . [SEP]
+  # typeid 为0 代表前一句话，为1 代表后一句话
+  # type_ids: 0     0  0    0    0     0       0 0     1  1  1  1   1 1
+
+
   # The convention in BERT is:
   # (a) For sequence pairs:
   #  tokens:   [CLS] is this jack ##son ##ville ? [SEP] no it is not . [SEP]
-  #  type_ids: 0     0  0    0    0     0       0 0     1  1  1  1   1 1 #表示来自哪句话
+  #  type_ids: 0     0  0    0    0     0       0 0     1  1  1  1   1 1
   # (b) For single sequences:
   #  tokens:   [CLS] the dog is hairy . [SEP]
   #  type_ids: 0     0   0   0  0     0 0
@@ -425,29 +451,43 @@ def convert_single_example(ex_index, example, label_list, max_seq_length,
   # the entire model is fine-tuned.
   tokens = []
   segment_ids = []
+
+  # TODO
+  # 第一句话加一个cls
   tokens.append("[CLS]")
   segment_ids.append(0)
   for token in tokens_a:
+
+      # 组合数据
     tokens.append(token)
+      # 第一句话都是0
     segment_ids.append(0)
   tokens.append("[SEP]")
   segment_ids.append(0)
 
   if tokens_b:
+      # 如果有b
+      # 第二句话都是1
     for token in tokens_b:
       tokens.append(token)
       segment_ids.append(1)
     tokens.append("[SEP]")
     segment_ids.append(1)
 
-  input_ids = tokenizer.convert_tokens_to_ids(tokens) #转换成ID
+  # TODO
+  # 把词转换成索引，通过查找vocab的词表
+  input_ids = tokenizer.convert_tokens_to_ids(tokens)
 
   # The mask has 1 for real tokens and 0 for padding tokens. Only real
   # tokens are attended to.
-  input_mask = [1] * len(input_ids) #由于后续可能会有补齐操作，设置了一个mask目的是让attention只能放到mask为1的位置
+  # TODO
+  # mask 为1 的代表为真的词，补齐的都是0
+  input_mask = [1] * len(input_ids)
 
   # Zero-pad up to the sequence length.
-  while len(input_ids) < max_seq_length: #PAD的长度取决于设置的最大长度
+  # TODO
+  # 做一个截断补齐操作
+  while len(input_ids) < max_seq_length:
     input_ids.append(0)
     input_mask.append(0)
     segment_ids.append(0)
@@ -457,7 +497,9 @@ def convert_single_example(ex_index, example, label_list, max_seq_length,
   assert len(segment_ids) == max_seq_length
 
   label_id = label_map[example.label]
-  if ex_index < 5: #打印一些例子
+  # TODO
+  # 打印一些demo
+  if ex_index < 5:
     tf.logging.info("*** Example ***")
     tf.logging.info("guid: %s" % (example.guid))
     tf.logging.info("tokens: %s" % " ".join(
@@ -467,6 +509,8 @@ def convert_single_example(ex_index, example, label_list, max_seq_length,
     tf.logging.info("segment_ids: %s" % " ".join([str(x) for x in segment_ids]))
     tf.logging.info("label: %s (id = %d)" % (example.label, label_id))
 
+  # TODO
+  # 跳
   feature = InputFeatures(
       input_ids=input_ids,
       input_mask=input_mask,
@@ -480,12 +524,17 @@ def file_based_convert_examples_to_features(
     examples, label_list, max_seq_length, tokenizer, output_file):
   """Convert a set of `InputExample`s to a TFRecord file."""
 
+  # TODO
+  # TFrecord处理数据快
+
   writer = tf.python_io.TFRecordWriter(output_file)
 
   for (ex_index, example) in enumerate(examples):
     if ex_index % 10000 == 0:
       tf.logging.info("Writing example %d of %d" % (ex_index, len(examples)))
 
+    # TODO
+    # 跳进
     feature = convert_single_example(ex_index, example, label_list,
                                      max_seq_length, tokenizer)
 
@@ -494,14 +543,18 @@ def file_based_convert_examples_to_features(
       return f
 
     features = collections.OrderedDict()
+    # TODO
+    # 转换为int，方便TFrecord
     features["input_ids"] = create_int_feature(feature.input_ids)
     features["input_mask"] = create_int_feature(feature.input_mask)
     features["segment_ids"] = create_int_feature(feature.segment_ids)
     features["label_ids"] = create_int_feature([feature.label_id])
     features["is_real_example"] = create_int_feature(
         [int(feature.is_real_example)])
-
+    # TODO
+    # 转为tf train的格式
     tf_example = tf.train.Example(features=tf.train.Features(feature=features))
+    # 写recorder
     writer.write(tf_example.SerializeToString())
   writer.close()
 
@@ -570,34 +623,42 @@ def _truncate_seq_pair(tokens_a, tokens_b, max_length):
     else:
       tokens_b.pop()
 
-
+# TODO
+# 创建模型
 def create_model(bert_config, is_training, input_ids, input_mask, segment_ids,
                  labels, num_labels, use_one_hot_embeddings):
   """Creates a classification model."""
+  # TODO
+  # 跳 modeling.py的107行
   model = modeling.BertModel(
       config=bert_config,
       is_training=is_training,
-      input_ids=input_ids,#（8,128）
-      input_mask=input_mask,#（8,128）
-      token_type_ids=segment_ids,#（8,128）
-      use_one_hot_embeddings=use_one_hot_embeddings)
+      input_ids=input_ids,  # （16，128） # 16 是 batch size
+      input_mask=input_mask,  # （16，128）
+      token_type_ids=segment_ids,  #（0，128）
+      use_one_hot_embeddings=use_one_hot_embeddings)  # 没TPU就False
 
   # In the demo, we are doing a simple classification task on the entire
   # segment.
   #
   # If you want to use the token-level output, use model.get_sequence_output()
   # instead.
+  # TODO
+  # cls [第一句话] seg [第二句话] seg  所以只需要取第一个
   output_layer = model.get_pooled_output()
 
   hidden_size = output_layer.shape[-1].value
 
+  # TODO
+  # 二分类
   output_weights = tf.get_variable(
       "output_weights", [num_labels, hidden_size],
       initializer=tf.truncated_normal_initializer(stddev=0.02))
 
   output_bias = tf.get_variable(
       "output_bias", [num_labels], initializer=tf.zeros_initializer())
-
+    # TODO
+    # 常规操作
   with tf.variable_scope("loss"):
     if is_training:
       # I.e., 0.1 dropout
@@ -792,7 +853,8 @@ def main(_):
 
   tokenization.validate_case_matches_checkpoint(FLAGS.do_lower_case,
                                                 FLAGS.init_checkpoint)
-
+  # TODO
+  # 都是一些输入参数的验证工作
   if not FLAGS.do_train and not FLAGS.do_eval and not FLAGS.do_predict:
     raise ValueError(
         "At least one of `do_train`, `do_eval` or `do_predict' must be True.")
@@ -839,9 +901,17 @@ def main(_):
   num_train_steps = None
   num_warmup_steps = None
   if FLAGS.do_train:
+    # TODO
+    # 从这里开始读取数据
     train_examples = processor.get_train_examples(FLAGS.data_dir)
+
+    # TODO
+    # 计算需要迭代多少次
     num_train_steps = int(
         len(train_examples) / FLAGS.train_batch_size * FLAGS.num_train_epochs)
+
+    # TODO
+    # 在刚开始时候，学习率偏少
     num_warmup_steps = int(num_train_steps * FLAGS.warmup_proportion)
 
   model_fn = model_fn_builder(
@@ -866,6 +936,8 @@ def main(_):
 
   if FLAGS.do_train:
     train_file = os.path.join(FLAGS.output_dir, "train.tf_record")
+    # TODO
+    # 跳到这个方法
     file_based_convert_examples_to_features(
         train_examples, label_list, FLAGS.max_seq_length, tokenizer, train_file)
     tf.logging.info("***** Running training *****")

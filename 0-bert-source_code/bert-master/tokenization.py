@@ -170,6 +170,9 @@ class FullTokenizer(object):
   def tokenize(self, text):
     split_tokens = []
     for token in self.basic_tokenizer.tokenize(text):
+      # TODO
+      # 词切片，把引文词切分成更基础的单元
+      # 中文一般切分成字
       for sub_token in self.wordpiece_tokenizer.tokenize(token):
         split_tokens.append(sub_token)
 
