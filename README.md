@@ -12,4 +12,12 @@
   - [使用tensorflow训练word2vec](https://github.com/shinkeika/nlp_project/tree/master/3-word2vec/tensorflow-word2vec)
   - [使用gensim训练自己的word2vec](https://github.com/shinkeika/nlp_project/tree/master/3-word2vec/gensim-word2vec)
 
+- [chatbot](https://github.com/shinkeika/nlp_project/tree/master/4-chatbot)
+
+  - [基于seq2seq的chatbot](https://github.com/shinkeika/nlp_project/blob/master/4-chatbot/tensorflow-seq2seq-chatbot/seq2seq-chatbot.ipynb)
+    
+
+
+  
+
   
