@@ -8,7 +8,7 @@
 
   - 目录结构
 
-    <img src="/Users/shinkeika/Library/Application Support/typora-user-images/image-20191202141121957.png" alt="image-20191202141121957" style="zoom:50%;" />
+    <img src="https://shinkeika.github.io/images/bert/0/1.png" alt="image-20191202141121957" style="zoom:50%;" />
 
     - bert-master bert项目
     - [BERT_BASE_DIR 里放google训练好的word-embedding](https://github.com/shinkeika/nlp_project/tree/master/0-bert-source_code/GLUE/BERT_BASE_DIR)
@@ -18,7 +18,7 @@
 
   - 训练数据的格式
 
-    <img src="/Users/shinkeika/Library/Application Support/typora-user-images/image-20191202142125336.png" alt="image-20191202142125336" style="zoom:50%;" />
+    <img src="https://shinkeika.github.io/images/bert/0/2.png" alt="image-20191202142125336" style="zoom:50%;" />
 
     - Quanlity 表示两句话是否表达一个意思 1代表相同，0代表不相同
     - \#1ID 代表第一句话的ID
